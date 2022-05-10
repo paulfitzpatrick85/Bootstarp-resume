@@ -63,7 +63,49 @@ transition: all .5s ease-in-out;
     font-size: 0;
 }
 
+#nav {
+    margin: 0;
+}
+
 #nav li {                  /*counter act fontsize of 0 in menucontainer above*/
 font-size: 14px;
 padding: 0;
 }
+
+.menuitem {
+    height: 120px;
+    text-align: center;
+    padding: 0;
+
+}
+
+.menuitem a {
+    width: 100%;    /*make whole are clickalbe*/
+    text-decoration: none;     /*removes underline from link*/
+    color: #fff;
+    height: 120px;     /*match parent menu item*/
+}
+
+.menuitem a i {             /*target font awesome icons*/
+    padding-top: 22px;   /*push down from top of div*/
+    display: block;      /*start and end with new line*/
+    color: #fafafa;
+    font-size: 26px;
+}
+
+.menuitem span {
+    display: block;
+    width: 100%;
+    padding-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/*-------------------------------------Hover.css*/
+ .hvr-sweep-to-bottom:before {
+background: rgba(0, 0, 0, 0.2);  /*color that covers element on hovering over it*/
+height: 120px;
+ }
