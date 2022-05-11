@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--taken from https://cdnjs.com/libraries?q=hover , see samples at https://ianlunn.github.io/Hover/-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rosie</title>
 </head>
@@ -54,7 +54,7 @@
     </section>
 
     <footer class="container-fluid"> <!--container-fluid make container ful width-->
-        <div class="row">
+        <div id="footer-details" class="row">
             <div class="col-sm-4">
                 <h5 class="uppercase general-sub">About</h5>
                 <p class="inline-block">
@@ -65,8 +65,7 @@
                 <h5 class="uppercase general-sub">Download</h5>
                 <p class="inline-block">
                     Need a printable version of my CV? Download it here.
-                    <a href="#" target="_blank" class="cv-pdf">
-                        <i class="fa fa-download" aria-hidden="true"></i>  <!--since i has no text, screen reader will miss this link, problem solved below-->
+                    <a href="#" target="_blank" class="cv-pdf"><i class="fa fa-download" aria-hidden="true"></i>  <!--since i has no text, screen reader will miss this link, problem solved below-->
                         <span class="sr-only">Download link</span>   <!--screen readers only-->
                     </a> 
                 </p>
