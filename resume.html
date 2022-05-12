@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--taken from https://cdnjs.com/libraries?q=hover , see samples at https://ianlunn.github.io/Hover/-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
@@ -27,13 +27,13 @@
                     <div class="col">
                         <ul id="nav" class="list-inline menucontainer"> <!---list-inline bootstrap to display list horizontally, menucontainer removes white space-->
                         <li class="col-6 col-sm-3 ui-menu-color-home list-inline-item menuitem">  <!--4 elements wide on anyting larger than small screen, 2 elements wide on mobile. list-inline-item must be used with bootstrap li-->
-                            <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+                            <a href="index.html" class="hvr-sweep-to-bottom"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
                         </li>
                         <li class="col-6 col-sm-3 ui-menu-color-resume list-inline-item menuitem">
-                            <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span>Resume</span></a>  <!--aria hidden= ignored by screen readers-->
+                            <a href="resume.html" class="hvr-sweep-to-bottom"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span>Resume</span></a>  <!--aria hidden= ignored by screen readers-->
                         </li>
                         <li class="col-6 col-sm-3 ui-menu-color-contact list-inline-item menuitem">
-                            <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-comment-dots" aria-hidden="true"></i><span>Contact</span></a>
+                            <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-comment-o" aria-hidden="true"></i><span>Contact</span></a>
                         </li>
                         <li class="col-6 col-sm-3 ui-menu-color-download list-inline-item menuitem">
                             <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-download" aria-hidden="true"></i><span>Download</span></a>
@@ -49,7 +49,61 @@
         </div>
     </header>
 
-    <section>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 bg-color-personal-info section-column">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="section-heading uppercase">
+                            Work History
+                        </h3>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-8 bg-color-three-reason section-column">  <!--section column is the cell of a table-->
+                <div class="row">
+                    <div class="col">
+                        <h3 class="section-heading uppercase">My Skills</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">  <!--mobile=10 col wide + offset of 1. switched off for tablet and larger(sm-0).tablet has 3 columns(sm-4). desktop appears as two columns(md-6)-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="three-reasons-icon fa fa-tv" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10">
+                                <h4 class="three-reasons-heading uppercase">Front End</h4>
+                                <p>I'm a skilled Full Stack Developer with a wealth of diverse life and technical experience that I bring to every project.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">  
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="three-reasons-icon fa fa-gears" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10">
+                                <h4 class="three-reasons-heading uppercase">Back End</h4>
+                                <p>I follow form as well as function. I know that the aesthetics of effective design combined with application speed, security and reliability combine to create a great user experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="progress">
+                            <div class="progress-bar" role="progress-bar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"></div>  <!--value for range of bar and point on bar-->
+                            <span class="sr-only">90% complete</span>
+                        </div>
+                        <span class="progress-type">HTML / HTML5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 
