@@ -249,7 +249,24 @@ margin: 0;
      width: 60%;
  }
 
+/*---------------------------------Skills*/
 
+.progress {
+    position: relative;
+    height: 25px;     /* changing wrapper height automatically change bar height*/
+    margin-bottom: 4px;
+}
 
+.progress-type {         /*position type/heading (e.g. HTML, JS etc) above and left of bar instead of far right on its end*/
+position: absolute;     /*absolute child of relative parent.*/
+left: 0px;
+font-weight: 400;
+padding: 3px 30px 2px 10px;
+color: #fafafa;
+background-color: rgba(25, 25, 25, 0.2);
+}
 
+.progress-section{
+    margin: 40px 20px;
+}
  
