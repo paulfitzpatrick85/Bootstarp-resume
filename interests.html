@@ -224,9 +224,13 @@
             var markers = locations.map(function(location, i) {  //location is current value of array as its looped through, i is index number of where we current are in array
             return new google.maps.Marker({          //return marker object
                 position: location,                  //set to current location (presumable in array?)
-                label: label[i % labels.length]      // get letter from labels variable, % loops round if there are more than 26 locations rather than throw error
+                label: labels[i % labels.length]      // get letter from labels variable, % loops round if there are more than 26 locations(corrosponding to 26 letters) rather than throw error
             });
         });
+
+        // Add a marker clusterer to manage the markers.
+            var markerClusterer = new MarkerClusterer(map, markers, {imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",});
+       
         }
     </script>
 
