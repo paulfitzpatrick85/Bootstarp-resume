@@ -1,5 +1,4 @@
 
-// var APIKey = "AIzaSyDMJlZjn2Dn-iT3q55wa8uzkZctZdpIYUM";
  // style.css code added to help map display correctly
         
 function initMap() {
