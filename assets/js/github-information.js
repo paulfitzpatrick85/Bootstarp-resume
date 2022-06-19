@@ -72,6 +72,13 @@ $("#gh-repo-data").html("");
                 if (errorResponse.status === 404) {  //404 is not found error
                     $("#gh-user-data").html(
                         `<h2>No info found for user ${username}</h2>`); //html set to the following in case of error
+
+              //API throttling = how many requests that can be made to an API in A given time period(to not overload servers)
+             //error if throttling occurs
+                } else if(errorResponse.status === 403) {      //403 - forbidden/access denied
+                    //set to date object, store in errorResponse in the header
+                    var resetTime = new Date(errorResponse.getResponseHeader(X-rateLimit-Reset)) //header provided by gitHub to let us know when quota is reset. present as unix time stamp, needs to be formatted by * 1000
+                    $("#gh-user-data").html(`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}`) //pick up locacation from brower and print in local time
                 } else {               //if not a 404 error
                     console.log(errorResponse);
                     $("#gh-user-data").html(
