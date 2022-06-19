@@ -19,6 +19,27 @@ function userInformationHTML(user) {
 ${user.login} - text will be users login name.
 line 14 - will show user info*/
 
+function repoInformationHTML(repos) {  //repos is the object returned from github API
+    if (repos.length == 0) {   //repos is returned as array, so can be checked if == 0
+        return `<div class="clearfix repo-list">No repos!</div>`;
+    }
+// if there are repos, they have to be iterated through
+// .map method (like for each, but returns array) is run against repos array
+    var listItemsHTML = repos.map(function(repo) {
+        return `<li>
+                    <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                </li>`;
+    });
+
+    return `<div class="clearfix repo-list">
+                <p>
+                    <strong>Repo List:</strong>
+                </p>
+                <ul>
+                    ${listItemsHTML.join("\n")}
+                </ul>
+            </div>`;
+}
 
 function fetchGitHubInformation(event) {       //event arg used as function is called by onInput event
     var username = $("#gh-username").val();   //use JQuery to select id and value of text field
@@ -33,7 +54,7 @@ function fetchGitHubInformation(event) {       //event arg used as function is c
 
         //when method take a function as first arg,
         $.when(
-            $.getJSON(`https://api.github.com/users/${username}`) //value obtained from input box
+            $.getJSON(`https://api.github.com/users/${username}`), //value obtained from input box
             $.getJSON(`https://api.github.com/users/${username}/repos`) // get repo info for user
         ).then(
             function(firstResponse, secondResponse) {  //1st arg is response from get.json method
