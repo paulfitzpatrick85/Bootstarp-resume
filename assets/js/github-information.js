@@ -42,6 +42,10 @@ function repoInformationHTML(repos) {  //repos is the object returned from githu
 }
 
 function fetchGitHubInformation(event) {       //event arg used as function is called by onInput event
+//ensure repo content is clear when text box is emptied
+$("#gh-user-data").html("");
+$("#gh-repo-data").html("");
+
     var username = $("#gh-username").val();   //use JQuery to select id and value of text field
     if (!username) {                //if no username entered
         $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);         //use JQ to set html inside div with id...
@@ -77,3 +81,5 @@ function fetchGitHubInformation(event) {       //event arg used as function is c
 
 }
 
+//display 'octocat' profile when page loads instead of empty div
+$(document).ready(fetchGitHubInformation);
