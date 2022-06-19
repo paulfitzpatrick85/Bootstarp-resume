@@ -20,9 +20,6 @@ ${user.login} - text will be users login name.
 line 14 - will show user info*/
 
 
-
-
-
 function fetchGitHubInformation(event) {       //event arg used as function is called by onInput event
     var username = $("#gh-username").val();   //use JQuery to select id and value of text field
     if (!username) {                //if no username entered
@@ -37,10 +34,14 @@ function fetchGitHubInformation(event) {       //event arg used as function is c
         //when method take a function as first arg,
         $.when(
             $.getJSON(`https://api.github.com/users/${username}`) //value obtained from input box
+            $.getJSON(`https://api.github.com/users/${username}/repos`) // get repo info for user
         ).then(
-            function(response) {  //1st arg is response from get.json method
-                var userData = response;
+            function(firstResponse, secondResponse) {  //1st arg is response from get.json method
+                //were 2 calls are made, 'when' packs the responses into arrays, and each 1 is the 1st element 
+                var userData = firstResponse[0];
+                var repoData = secondResponse[0];
                 $("#gh-user-data").html(userInformationHTML(userData));  //set content of div to results of function userInformationHTML 
+                $("#gh-repo-data").html(repoInformationHTML(repoData));
             },
             function(errorResponse) {
                 if (errorResponse.status === 404) {  //404 is not found error
